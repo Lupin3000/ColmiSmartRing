@@ -12,6 +12,9 @@
 # clone repository
 $ git clone https://github.com/Lupin3000/ColmiSmartRing.git
 
+# change into cloned directory
+$ cd ColmiSmartRing/
+
 # create virtualenv
 $ python -m venv .venv
 
