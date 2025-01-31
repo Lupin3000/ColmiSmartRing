@@ -49,7 +49,7 @@ Sometimes the scanner will not find the Colmi Smart Ring, please try again! If y
 
 ### Accelerometer
 
-> This Python script will read and print continuously the data and does not stop by itself! To stop press keys: Ctrl + c
+> This Python script will read and print continuously the data from accelerometer and does not stop by itself! To stop the script and BLE connection press keys: [Ctrl] + [c].
 
 ```shell
 # read accelerometer data 
