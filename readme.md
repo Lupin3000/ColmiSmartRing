@@ -10,7 +10,7 @@
 
 ```shell
 # clone repository
-$ git clone https://github.com/Lupin3000/...
+$ git clone https://github.com/Lupin3000/ColmiSmartRing.git
 
 # create virtualenv
 $ python -m venv .venv
