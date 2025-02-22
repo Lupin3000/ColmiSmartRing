@@ -40,14 +40,14 @@ $ .venv/bin/activate
 
 ```shell
 # scan for smart ring address
-(.venv) $ python ColmiRingScanner.py
+(.venv) $ python3 ColmiRingScanner.py
 ```
 
 Sometimes the scanner will not find the Colmi Smart Ring, please try again! If you found the Colmi Smart Ring and selected it. The Python script will create a new directory (_config_). Inside this newly created directory a new file is created (_colmi_address.py_) with two constants (_RING_NAME and RING_ADDRESS_). These constants are used later by all other Python scripts.
 
 ## Read data from Colmi Smart Ring
 
-Note: Sometimes the BLE connection will not be established, please try again!
+**Note:** Sometimes the BLE connection will not be established on first run, just try the respective Python script again.
 
 ### Accelerometer
 
@@ -55,14 +55,14 @@ Note: Sometimes the BLE connection will not be established, please try again!
 
 ```shell
 # read accelerometer data 
-(.venv) $ python ColmiRingAccelerometer.py
+(.venv) $ python3 ColmiRingAccelerometer.py
 ```
 
 ### Real-time Heart Rate
 
-> This Python script will read and print continuously the data for heart-rate  and does not stop by itself! To stop the script and BLE connection press keys: [Ctrl] + [c].
+> This Python script will read and print continuously the data for heart-rate and does not stop by itself! To stop the script and BLE connection press keys: [Ctrl] + [c].
 
 ```shell
 # read accelerometer data 
-(.venv) $ python ColmiRingHeartRate.py
+(.venv) $ python3 ColmiRingHeartRate.py
 ```
