@@ -3,8 +3,8 @@
 ## Minimum requirements
 
 [![Static](https://img.shields.io/badge/python->=3.12.x-green)](https://python.org)
-[![Static](https://img.shields.io/badge/asyncio-3.4.3-green)](https://docs.python.org/dev/library/asyncio.html)
-[![Static](https://img.shields.io/badge/bleak-0.22.3-green)](https://bleak.readthedocs.io/en/latest/)
+[![Static](https://img.shields.io/badge/asyncio-==3.4.3-green)](https://docs.python.org/dev/library/asyncio.html)
+[![Static](https://img.shields.io/badge/bleak-==0.22.3-green)](https://bleak.readthedocs.io/en/latest/)
 
 ## Installation
 
@@ -12,7 +12,7 @@
 
 1. Clone this repository
 2. Create Python virtualenv (_recommended_)
-3. Install Python modules/packages
+3. Install required Python modules/packages (_via requirements.txt_)
 
 ```shell
 # clone repository
