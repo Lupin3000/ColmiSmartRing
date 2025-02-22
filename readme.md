@@ -1,8 +1,14 @@
 # Colmi Smart Ring - Python
 
+## Minimum requirements
+
+[![Static](https://img.shields.io/badge/python->=3.12.x-green)](https://python.org)
+[![Static](https://img.shields.io/badge/asyncio-3.4.3-green)](https://docs.python.org/dev/library/asyncio.html)
+[![Static](https://img.shields.io/badge/bleak-0.22.3-green)](https://bleak.readthedocs.io/en/latest/)
+
 ## Installation
 
-> The following Python code is developed with Python version: 3.12.x. Python bleak and asyncio are used for BLE communication. Tested with Colmi Smart Ring R06.
+> Tested with Colmi Smart Ring R06 (_but should work with mostly all Colmi Smart Rings_).
 
 1. Clone this repository
 2. Create Python virtualenv (_recommended_)
