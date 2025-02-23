@@ -57,7 +57,8 @@ Sometimes the scanner will not find the Colmi Smart Ring, please try again! If y
 
 ### Accelerometer
 
-> This Python script will read and print continuously the data from accelerometer and does not stop by itself! To stop the script and BLE connection press keys: [Ctrl] + [c].
+> This Python script will read and print continuously the data from accelerometer (_X, Y, Z_).
+>> To stop the script and BLE connection press keys: [Ctrl] + [c].
 
 ```shell
 # read accelerometer data 
@@ -66,7 +67,8 @@ Sometimes the scanner will not find the Colmi Smart Ring, please try again! If y
 
 ### Real-time Heart Rate
 
-> This Python script will read and print continuously the data for heart-rate (_bpm_) and does not stop by itself! To stop the script and BLE connection press keys: [Ctrl] + [c].
+> This Python script will read max. 5 values and print the average data for heart-rate (_bpm_).
+>> To stop the script and BLE connection press keys: [Ctrl] + [c].
 
 ```shell
 # read accelerometer data 
@@ -75,7 +77,8 @@ Sometimes the scanner will not find the Colmi Smart Ring, please try again! If y
 
 ### Real-time SpO2
 
-> This Python script will read and print continuously the data for SpO2 (_%_) and does not stop by itself! To stop the script and BLE connection press keys: [Ctrl] + [c].
+> This Python script will read max. 5 values and print the average data for SpO2 (_%_).
+>> To stop the script and BLE connection press keys: [Ctrl] + [c].
 
 ```shell
 # read accelerometer data 

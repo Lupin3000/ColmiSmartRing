@@ -45,13 +45,19 @@ async def handle_notification(sender: BleakGATTCharacteristic, data: bytearray) 
     :type data: bytearray
     :return: None
     """
+    global values
+
     _ = sender
     spo2 = parse_real_time_reading(data)
 
     if spo2 is not None:
+        values.append(spo2)
         print(f"[INFO] Heart rate: {spo2} %")
     else:
         print("[WARNING] Invalid data received. Skipping...")
+
+    if len(values) >= 5:
+        stop_event.set()
 
 
 async def main(device_name: str, device_address: str) -> None:
@@ -67,6 +73,8 @@ async def main(device_name: str, device_address: str) -> None:
     :type device_address: str
     :return: None
     """
+    global values
+
     print(f"[INFO] Connecting to {device_name} [{device_address}]...")
 
     async with BleakClient(device_address) as client:
@@ -99,8 +107,13 @@ async def main(device_name: str, device_address: str) -> None:
             await client.stop_notify(RXTX_NOTIFY_CHARACTERISTIC_UUID)
             print("[INFO] Disconnected from device.")
 
+            spo2_avg = sum(values) / len(values) if values else 0
+            print(f"\n[INFO] Average Heart Rate: {int(spo2_avg)} %")
+
 
 if __name__ == "__main__":
+    values = []
+
     stop_event = asyncio.Event()
     signal(SIGINT, signal_handler)
 
