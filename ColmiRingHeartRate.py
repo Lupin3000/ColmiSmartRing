@@ -10,7 +10,7 @@ from libs.packages import parse_real_time_reading, get_start_packet, get_continu
 
 RXTX_WRITE_CHARACTERISTIC_UUID: str = "6e400002-b5a3-f393-e0a9-e50e24dcca9e"
 RXTX_NOTIFY_CHARACTERISTIC_UUID: str = "6e400003-b5a3-f393-e0a9-e50e24dcca9e"
-
+MAX_MEASUREMENT: int = 5
 REAL_TIME_HEART_RATE: int = 1
 
 
@@ -56,7 +56,7 @@ async def handle_notification(sender: BleakGATTCharacteristic, data: bytearray) 
     else:
         print("[WARNING] Invalid data received. Skipping...")
 
-    if len(values) >= 5:
+    if len(values) >= MAX_MEASUREMENT:
         stop_event.set()
 
 
