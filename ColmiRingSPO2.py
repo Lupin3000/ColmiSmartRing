@@ -11,7 +11,7 @@ from libs.packages import parse_real_time_reading, get_start_packet, get_continu
 RXTX_WRITE_CHARACTERISTIC_UUID: str = "6e400002-b5a3-f393-e0a9-e50e24dcca9e"
 RXTX_NOTIFY_CHARACTERISTIC_UUID: str = "6e400003-b5a3-f393-e0a9-e50e24dcca9e"
 
-REAL_TIME_HEART_RATE: int = 1
+REAL_TIME_SPO2: int = 3
 
 
 def signal_handler(sig: int, frame: Optional[FrameType]) -> None:
@@ -46,10 +46,10 @@ async def handle_notification(sender: BleakGATTCharacteristic, data: bytearray) 
     :return: None
     """
     _ = sender
-    hr = parse_real_time_reading(data)
+    spo2 = parse_real_time_reading(data)
 
-    if hr is not None:
-        print(f"[INFO] Heart rate: {hr} bpm")
+    if spo2 is not None:
+        print(f"[INFO] Heart rate: {spo2} %")
     else:
         print("[WARNING] Invalid data received. Skipping...")
 
@@ -76,24 +76,24 @@ async def main(device_name: str, device_address: str) -> None:
 
         print(f"[INFO] Connected to {device_name} [{device_address}].")
 
-        start_packet = get_start_packet(REAL_TIME_HEART_RATE)
+        start_packet = get_start_packet(REAL_TIME_SPO2)
         print(f"[INFO] Send start package: {start_packet.hex()}")
         await client.write_gatt_char(RXTX_WRITE_CHARACTERISTIC_UUID, start_packet)
         await asyncio.sleep(0.5)
 
-        continue_packet = get_continue_packet(REAL_TIME_HEART_RATE)
+        continue_packet = get_continue_packet(REAL_TIME_SPO2)
         print(f"[INFO] Send continue package: {continue_packet.hex()}")
         await client.write_gatt_char(RXTX_WRITE_CHARACTERISTIC_UUID, continue_packet)
         await client.start_notify(RXTX_NOTIFY_CHARACTERISTIC_UUID, handle_notification)
 
-        print("[INFO] Wait for real-time heart rate data... (Stop with Ctrl + c)")
+        print("[INFO] Wait for real-time spo2 data... (Stop with Ctrl + c)")
 
         try:
             await stop_event.wait()
         except KeyboardInterrupt:
             print("[INFO] Measurement is ended...")
         finally:
-            stop_packet = get_stop_packet(REAL_TIME_HEART_RATE)
+            stop_packet = get_stop_packet(REAL_TIME_SPO2)
             print("[INFO] Send Stop package:", stop_packet.hex())
             await client.write_gatt_char(RXTX_WRITE_CHARACTERISTIC_UUID, stop_packet)
             await client.stop_notify(RXTX_NOTIFY_CHARACTERISTIC_UUID)

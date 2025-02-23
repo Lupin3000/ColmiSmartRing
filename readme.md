@@ -66,9 +66,18 @@ Sometimes the scanner will not find the Colmi Smart Ring, please try again! If y
 
 ### Real-time Heart Rate
 
-> This Python script will read and print continuously the data for heart-rate and does not stop by itself! To stop the script and BLE connection press keys: [Ctrl] + [c].
+> This Python script will read and print continuously the data for heart-rate (_bpm_) and does not stop by itself! To stop the script and BLE connection press keys: [Ctrl] + [c].
 
 ```shell
 # read accelerometer data 
 (.venv) $ python3 ColmiRingHeartRate.py
+```
+
+### Real-time SpO2
+
+> This Python script will read and print continuously the data for SpO2 (_%_) and does not stop by itself! To stop the script and BLE connection press keys: [Ctrl] + [c].
+
+```shell
+# read accelerometer data 
+(.venv) $ python3 ColmiRingSPO2.py
 ```
