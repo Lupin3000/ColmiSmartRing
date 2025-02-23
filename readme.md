@@ -71,7 +71,7 @@ Sometimes the scanner will not find the Colmi Smart Ring, please try again! If y
 >> To stop the script and BLE connection press keys: [Ctrl] + [c].
 
 ```shell
-# read accelerometer data 
+# read heart rate data 
 (.venv) $ python3 ColmiRingHeartRate.py
 ```
 
@@ -81,6 +81,6 @@ Sometimes the scanner will not find the Colmi Smart Ring, please try again! If y
 >> To stop the script and BLE connection press keys: [Ctrl] + [c].
 
 ```shell
-# read accelerometer data 
+# read SpO2 data 
 (.venv) $ python3 ColmiRingSPO2.py
 ```
