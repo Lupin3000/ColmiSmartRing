@@ -1,6 +1,7 @@
 .DS_Store
 .idea
 .venv
+.pyc
 
 config
 __pycache__
