@@ -108,7 +108,7 @@ async def main(device_name: str, device_address: str) -> None:
             print("[INFO] Disconnected from device.")
 
             spo2_avg = sum(values) / len(values) if values else 0
-            print(f"\n[INFO] Average Heart Rate: {int(spo2_avg)} %")
+            print(f"\n[INFO] Blood oxygen saturation level: {int(spo2_avg)} %")
 
 
 if __name__ == "__main__":
